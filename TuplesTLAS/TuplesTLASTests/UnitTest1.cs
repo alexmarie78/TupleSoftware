@@ -13,7 +13,7 @@ namespace TuplesTLASTests
             var tuple = new TupleAPI();
             tuple.Add(1, 2);
             tuple.Add(3, 4);
-            tuple.Add(8, -6);
+            tuple.Add(3, 4);
             Assert.AreEqual(tuple.Tuples.Count, 3);
         }
 
@@ -23,8 +23,8 @@ namespace TuplesTLASTests
             var tuple = new TupleAPI();
             tuple.Add(1, 2);
             tuple.Add(3, 4);
-            tuple.Add(5, -6);
-            Assert.AreEqual(tuple.Sum(), 9);
+            tuple.Add(5, 5);
+            Assert.AreEqual(tuple.Sum(), 20);
         }
 
         [TestMethod]

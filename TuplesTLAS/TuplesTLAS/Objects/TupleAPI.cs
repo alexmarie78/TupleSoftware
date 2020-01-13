@@ -24,7 +24,23 @@ namespace TuplesTLAS.Objects
         /// <param name="y"> Second integer of the new Tuple</param>
         public void Add(int x, int y)
         {
-            Tuples.Add(new Tuple<int, int>(x, y));
+            if (Tuples.Count >= 10)
+            {
+                throw new ArgumentException("Max capacity");
+            }
+
+            if(x < 0 || y < 0)
+            {
+                throw new ArgumentException("Tuple members are not positives");
+            }
+
+
+            if (x + y > 10)
+            {
+                throw new ArgumentException("Max capacity of the tuple");
+            }
+
+            Tuples.Add(new Tuple<int, int>(x, y));         
         }
 
        
