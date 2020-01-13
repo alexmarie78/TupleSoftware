@@ -1,5 +1,5 @@
 language: csharp
-solution: TuplesTLAS.sln
+solution: /TuplesTLAS/TuplesTLAS.sln
 env:
   global:
     - EnableNuGetPackageRestore=true
