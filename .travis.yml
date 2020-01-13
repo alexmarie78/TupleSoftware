@@ -4,7 +4,7 @@ env:
   global:
     - EnableNuGetPackageRestore=true
   install:
-    - nuget restore TuplesTLAS.sln
+    - nuget restore /TuplesTLAS/TuplesTLAS.sln
   script: 
     - xbuild
     - ./build.sh
