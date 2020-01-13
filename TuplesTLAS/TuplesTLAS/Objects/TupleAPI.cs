@@ -10,7 +10,7 @@ namespace TuplesTLAS.Objects
     /// Class TupleAPI
     /// API representing a list of tuple
     /// </summary>
-    class TupleAPI
+    public class TupleAPI
     {
         /// <summary>
         /// List of Tuples
