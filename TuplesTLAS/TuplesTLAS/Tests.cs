@@ -10,7 +10,7 @@ namespace TuplesTLAS
     {
         public bool TestAjout()
         {
-
+            return false;
         }
     }
 }
