@@ -1,10 +1,10 @@
 language: csharp
-solution: /TuplesTLAS/TuplesTLAS.sln
+solution: TuplesTLAS/TuplesTLAS.sln
 env:
   global:
     - EnableNuGetPackageRestore=true
   install:
-    - nuget restore /TuplesTLAS/TuplesTLAS.sln
+    - nuget restore TuplesTLAS/TuplesTLAS.sln
   script: 
     - xbuild
     - ./build.sh
