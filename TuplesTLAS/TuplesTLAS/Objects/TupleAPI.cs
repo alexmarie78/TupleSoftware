@@ -34,14 +34,13 @@ namespace TuplesTLAS.Objects
                 throw new ArgumentException("Tuple members are not positives");
             }
 
-            var t = new Tuple<int, int>(x, y);
-            Tuples.Add(t);
 
-            if(Sum() > 10)
+            if (x + y > 10)
             {
-                Tuples.Remove(t);
                 throw new ArgumentException("Max capacity of the tuple");
             }
+
+            Tuples.Add(new Tuple<int, int>(x, y));         
         }
 
        
