@@ -5,12 +5,10 @@ env:
     - EnableNuGetPackageRestore=true
   script:
     - xbuild /p:Configuration=Debug TuplesTLAS/TuplesTLAS.sln
-  before_install:
     - sudo apt-get install nunit-console
+    - nunit-console TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.dll
   install:
     - nuget restore TuplesTLAS/TuplesTLAS.sln
-  after-script:
-    - nunit-console TuplesTLAS/TuplesTLASTests/bin/Debug/TuplesTLASTests.dll
   os:
     - windows
     - osx
