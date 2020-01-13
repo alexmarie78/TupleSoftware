@@ -1,8 +1,16 @@
 language: csharp
 solution: TuplesTLAS.sln
-os:
-  - windows
-  - osx
-mono:
-  - 3.12.0
-  - 3.10.0
+env:
+  global:
+    - EnableNuGetPackageRestore=true
+  install:
+    - nuget restore TuplesTLAS.sln
+  script: 
+    - xbuild
+    - ./build.sh
+  os:
+    - windows
+    - osx
+  mono:
+    - 3.12.0
+    - 3.10.0
