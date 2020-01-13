@@ -1,5 +1,8 @@
 language: csharp
 solution: TuplesTLAS.sln
+os:
+  - windows
+  - osx
 mono:
   - latest
   - 3.12.0
