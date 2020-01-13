@@ -3,11 +3,14 @@ solution: TuplesTLAS/TuplesTLAS.sln
 env:
   global:
     - EnableNuGetPackageRestore=true
+  script:
+    - xbuild /p:Configuration=Debug TuplesTLAS/TuplesTLAS.sln
+  before_install:
+    - sudo apt-get install nunit-console
   install:
     - nuget restore TuplesTLAS/TuplesTLAS.sln
-  script: 
-    - xbuild
-    - ./build.sh
+  after-script:
+    - nunit-console TuplesTLAS/TuplesTLASTests/bin/Debug/TuplesTLASTests.dll
   os:
     - windows
     - osx
