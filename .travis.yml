@@ -2,8 +2,6 @@ language: csharp
 solution: TuplesTLAS/TuplesTLAS.sln
 os:
   - windows
-mono:
-  - 3.10.0
 install:
   - nuget restore TuplesTLAS/TuplesTLAS.sln
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory tesrunner
