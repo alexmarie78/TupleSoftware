@@ -4,12 +4,10 @@ os:
   - linux
 install:
   - nuget restore TuplesTLAS/TuplesTLAS.sln
-  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory tesrunner
-  - nuget install coveralls.io -Version 1.4.2
-script: 
+  - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
+script:
   - msbuild /p:Configuration=Release TuplesTLAS/TuplesTLAS.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.Tests.dll
-env:
 
 
 #env:  
