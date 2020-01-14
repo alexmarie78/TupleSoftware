@@ -9,7 +9,7 @@ namespace TuplesTLAS.GameManager
 {
     public class Game
     {
-        private TupleAPI tupleAPI;
+        private readonly TupleAPI tupleAPI;
 
         public Game()
         {
@@ -19,7 +19,7 @@ namespace TuplesTLAS.GameManager
         /// <summary>
         /// Scenario of game
         /// </summary>
-        public int LaunchGame(TupleAPI tupleApi = null)
+        public int LaunchGame(TupleAPI tupleApi = null, int valueBonus1 = 999, int valueBonus2 = 999)
         {
             int score = 0;
             for (int i = 0; i < 10; i++)
@@ -48,16 +48,37 @@ namespace TuplesTLAS.GameManager
                 {
                     if(value1.Equals(10))  // if strick
                     {
-                        value1 = EnterFirstValue(tupleApi, i);
+                        if(valueBonus1 != 999)
+                        {
+                            value1 = valueBonus1;
+                        }
+                        else
+                        {
+                            value1 = EnterFirstValue(tupleApi, i);
+                        }
                         if (!value1.Equals(10))
                         {
-                            value2 = EnterSecondValue(value1, tupleApi, i);
+                            if (valueBonus2 != 999)
+                            {
+                                value2 = valueBonus2;
+                            }
+                            else
+                            {
+                                value2 = EnterSecondValue(value1, tupleApi, i);
+                            }
                         }
                         score += value1 + value2;
                     }
                     if(value1 + value2 == 10)
                     {
-                        value1 = EnterFirstValue();
+                        if (valueBonus1 != 999)
+                        {
+                            value1 = valueBonus1;
+                        }
+                        else
+                        {
+                            value1 = EnterFirstValue();
+                        }
                         score += value1;
                     }
                 }
