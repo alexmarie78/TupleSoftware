@@ -29,7 +29,7 @@ namespace TuplesTLAS.Objects
                 throw new ArgumentException("Max capacity");
             }
 
-            if(x < 0 || y < 0)
+            if (x < 0 || y < 0)
             {
                 throw new ArgumentException("Tuple members are not positives");
             }
@@ -40,10 +40,10 @@ namespace TuplesTLAS.Objects
                 throw new ArgumentException("Max capacity of the tuple");
             }
 
-            Tuples.Add(new Tuple<int, int>(x, y));         
+            Tuples.Add(new Tuple<int, int>(x, y));
         }
 
-       
+
         /// <summary>
         /// Return the sum of all element of the list of Tuples
         /// </summary>
@@ -51,10 +51,25 @@ namespace TuplesTLAS.Objects
         public int Sum()
         {
             var sum = 0;
-            foreach(var tuple in Tuples)
+
+            for (var i = 0; i < Tuples.Count - 1; i++)
             {
-                sum += tuple.Item1 + tuple.Item2;
+                var temp = Tuples[i].Item1 + Tuples[i].Item2;
+                sum += temp;
+
+                if (Tuples[i].Item1 == 10)
+                {
+                    sum += Tuples[i + 1].Item1 + Tuples[i + 1].Item2;
+                }
+                else if (temp == 10)
+                {
+                    sum += Tuples[i + 1].Item1;
+                }
             }
+
+            // Handle last element
+            sum += Tuples[Tuples.Count - 1].Item1 + Tuples[Tuples.Count - 1].Item2;
+
             return sum;
         }
     }

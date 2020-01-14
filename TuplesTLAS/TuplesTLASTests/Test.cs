@@ -1,13 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
+using System;
 using TuplesTLAS.Objects;
 
 namespace TuplesTLASTests
 {
-    [TestClass]
+
+
+    [TestFixture()]
     public class UnitTest1
     {
-        [TestMethod]
+        [Test()]
         public void TestSize()
         {
             var tuple = new TupleAPI();
@@ -17,7 +19,7 @@ namespace TuplesTLASTests
             Assert.AreEqual(tuple.Tuples.Count, 3);
         }
 
-        [TestMethod]
+        [Test()]
         public void TestSum()
         {
             var tuple = new TupleAPI();
@@ -27,7 +29,7 @@ namespace TuplesTLASTests
             Assert.AreEqual(tuple.Sum(), 20);
         }
 
-        [TestMethod]
+        [Test()]
         public void TestSumCoupleEqual10()
         {
             var tuple = new TupleAPI();
@@ -38,7 +40,7 @@ namespace TuplesTLASTests
             Assert.AreEqual(tuple.Sum(), 33);
         }
 
-        [TestMethod]
+        [Test()]
         public void TestSumFirstMemberCoupleEqual10()
         {
             var tuple = new TupleAPI();
@@ -47,7 +49,7 @@ namespace TuplesTLASTests
             Assert.AreEqual(tuple.Sum(), 24);
         }
 
-        [TestMethod]
+        [Test()]
         public void TestSumTwoCoupleEqual10()
         {
             var tuple = new TupleAPI();
@@ -58,7 +60,7 @@ namespace TuplesTLASTests
             Assert.AreEqual(tuple.Sum(), 46);
         }
 
-        [TestMethod]
+        [Test()]
         public void TestSecondMemberFirstCoupleEqual10()
         {
             var tuple = new TupleAPI();
@@ -67,8 +69,7 @@ namespace TuplesTLASTests
             Assert.AreEqual(tuple.Sum(), 23);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException),"Max capacity")]
+        [Test()]
         public void TestMaxCapacitiy()
         {
             var tuple = new TupleAPI();
@@ -82,28 +83,43 @@ namespace TuplesTLASTests
             tuple.Add(1, 2);
             tuple.Add(1, 2);
             tuple.Add(1, 2);
-            tuple.Add(1, 2);
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(1, 2));
+            Assert.AreEqual("Max capacity", ex.Message);
         }
+    
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Tuple members are not positives")]
-        public void TestPositive()
+        [Test()]
+        public void TestPositive1()
         {
             var tuple = new TupleAPI();
-            tuple.Add(-1, 2);
-            tuple.Add(-1, -2);
-            tuple.Add(1, -2);
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(-1, -2));
+            Assert.AreEqual("Tuple members are not positives", ex.Message);
         }
 
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentException), "Max capacity of the tuple")]
+        [Test()]
+        public void TestPositive2()
+        {
+            var tuple = new TupleAPI();
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(1, -2));
+            Assert.AreEqual("Tuple members are not positives", ex.Message);
+        }
+
+        [Test()]
+        public void TestPositive3()
+        {
+            var tuple = new TupleAPI();
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(-1, 2));
+            Assert.AreEqual("Tuple members are not positives", ex.Message);
+        }
+
+        [Test()]
         public void TestMaxCapacityTuple()
         {
             var tuple = new TupleAPI();
-            tuple.Add(5, 6);
-            tuple.Add(6, 5);
-            tuple.Add(5, 5);
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(5, 6));
+            Assert.AreEqual("Max capacity of the tuple", ex.Message);
         }
+
 
     }
 }
