@@ -3,11 +3,11 @@ solution: TuplesTLAS/TuplesTLAS.sln
 os:
   - windows
 mono:
-  - 3.12.0
   - 3.10.0
-install: 
+install:
   - nuget restore TuplesTLAS/TuplesTLAS.sln
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory tesrunner
+  - nuget install coveralls.io -Version 1.4.2
 script: 
   - msbuild /p:Configuration=Release TuplesTLAS/TuplesTLAS.sln
   - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.Tests.dll
