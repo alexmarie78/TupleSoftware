@@ -43,34 +43,28 @@ namespace TuplesTLASTests
         {
             var tuple = new TupleAPI();
             tuple.Add(10, 0);
-            tuple.Add(3, 4);
-            tuple.Add(3, 5);
             tuple.Add(6, 1);
-            Assert.AreEqual(tuple.Sum(), 39);
+            Assert.AreEqual(tuple.Sum(), 24);
         }
 
         [TestMethod]
         public void TestSumTwoCoupleEqual10()
         {
             var tuple = new TupleAPI();
-            tuple.Add(10, 0);
             tuple.Add(5, 5);
-            tuple.Add(3, 4);
-            tuple.Add(3, 5);
             tuple.Add(6, 1);
-            Assert.AreEqual(tuple.Sum(), 55);
+            tuple.Add(5, 5);
+            tuple.Add(6, 1);
+            Assert.AreEqual(tuple.Sum(), 46);
         }
 
         [TestMethod]
-        public void TestSecondCoupleFirstMemberEqual10()
+        public void TestSecondMemberFirstCoupleEqual10()
         {
             var tuple = new TupleAPI();
             tuple.Add(0, 10);
-            tuple.Add(3, 4);
-            tuple.Add(3, 4);
-            tuple.Add(3, 5);
             tuple.Add(6, 1);
-            Assert.AreEqual(tuple.Sum(), 37);
+            Assert.AreEqual(tuple.Sum(), 23);
         }
 
         [TestMethod]
