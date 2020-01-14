@@ -28,6 +28,52 @@ namespace TuplesTLASTests
         }
 
         [TestMethod]
+        public void TestSumCoupleEqual10()
+        {
+            var tuple = new TupleAPI();
+            tuple.Add(1, 2);
+            tuple.Add(3, 4);
+            tuple.Add(5, 5);
+            tuple.Add(6, 1);
+            Assert.AreEqual(tuple.Sum(), 33);
+        }
+
+        [TestMethod]
+        public void TestSumFirstMemberCoupleEqual10()
+        {
+            var tuple = new TupleAPI();
+            tuple.Add(10, 0);
+            tuple.Add(3, 4);
+            tuple.Add(3, 5);
+            tuple.Add(6, 1);
+            Assert.AreEqual(tuple.Sum(), 39);
+        }
+
+        [TestMethod]
+        public void TestSumTwoCoupleEqual10()
+        {
+            var tuple = new TupleAPI();
+            tuple.Add(10, 0);
+            tuple.Add(5, 5);
+            tuple.Add(3, 4);
+            tuple.Add(3, 5);
+            tuple.Add(6, 1);
+            Assert.AreEqual(tuple.Sum(), 55);
+        }
+
+        [TestMethod]
+        public void TestSecondCoupleFirstMemberEqual10()
+        {
+            var tuple = new TupleAPI();
+            tuple.Add(0, 10);
+            tuple.Add(3, 4);
+            tuple.Add(3, 4);
+            tuple.Add(3, 5);
+            tuple.Add(6, 1);
+            Assert.AreEqual(tuple.Sum(), 37);
+        }
+
+        [TestMethod]
         [ExpectedException(typeof(ArgumentException),"Max capacity")]
         public void TestMaxCapacitiy()
         {
@@ -64,5 +110,6 @@ namespace TuplesTLASTests
             tuple.Add(6, 5);
             tuple.Add(5, 5);
         }
+
     }
 }
