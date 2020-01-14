@@ -42,7 +42,6 @@ namespace TuplesTLAS.Objects
 
             Tuples.Add(new Tuple<int, int>(x, y));         
         }
-
        
         /// <summary>
         /// Return the sum of all element of the list of Tuples
