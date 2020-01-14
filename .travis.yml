@@ -4,15 +4,26 @@ env:
   os:
     - windows
     - osx
-  mono:
-    - 3.12.0
-    - 3.10.0
-  install: 
-    - nuget restore TuplesTLAS/TuplesTLAS.sln
-    - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory tesrunner
-  script: 
-    - msbuild /p:Configuration=Release TuplesTLAS/TuplesTLAS.sln
-    - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.Tests.dll
+  mono: none
+  dotnet: 2.1.502
+  script:
+    - dotnet restore
+    - dotnet test
+
+
+#env:
+#  os:
+#    - windows
+#    - osx
+#  mono:
+#    - 3.12.0
+#    - 3.10.0
+#  install: 
+#    - nuget restore TuplesTLAS/TuplesTLAS.sln
+#    - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory tesrunner
+#  script: 
+#    - msbuild /p:Configuration=Release TuplesTLAS/TuplesTLAS.sln
+#    - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.Tests.dll
 
 
 #env:  
