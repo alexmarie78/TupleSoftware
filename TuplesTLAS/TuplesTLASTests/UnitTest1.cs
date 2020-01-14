@@ -46,7 +46,7 @@ namespace TuplesTLASTests
             tuple.Add(3, 4);
             tuple.Add(3, 5);
             tuple.Add(6, 1);
-            Assert.AreEqual(tuple.Sum(), 38);
+            Assert.AreEqual(tuple.Sum(), 39);
         }
 
         [TestMethod]
