@@ -28,12 +28,15 @@ namespace TuplesTLAS.GameManager
 
                 Console.WriteLine("Lancer n°" + (i+1));
 
-               
                 value1 = EnterFirstValue();
                 if (!value1.Equals(10))
+                {
                     value2 = EnterSecondValue(value1);
+                }
                 else
+                {
                     Console.WriteLine("Bravo pour votre Strike");
+                }
 
                 // add new tuple
                 tupleAPI.Add(value1, value2);
@@ -46,7 +49,9 @@ namespace TuplesTLAS.GameManager
                     {
                         value1 = EnterFirstValue();
                         if (!value1.Equals(10))
+                        {
                             value2 = EnterSecondValue(value1);
+                        }
                         score += value1 + value2;
                     }
                     if(value1 + value2 == 10)
@@ -63,7 +68,6 @@ namespace TuplesTLAS.GameManager
             Console.WriteLine("Partie terminée, votre score : " + score);
         }
 
-
         /// <summary>
         ///  First entry of score
         /// </summary>
@@ -77,13 +81,16 @@ namespace TuplesTLAS.GameManager
                 Console.Write("Entrer le nombre de quille tombée au premier coup : ");
                 value = Int32.Parse(Console.ReadLine());
                 if (value > 0 && value <= 10)
+                {
                     ok = true;
+                }
                 else
+                {
                     Console.WriteLine("Entrée non valide, recommencez.");
+                }
             }
             return value;
         }
-
 
         /// <summary>
         /// Second entry of score
@@ -99,12 +106,15 @@ namespace TuplesTLAS.GameManager
                 Console.Write("Entrer le nombre de quille tombée au deuxième coup : ");
                 value = Int32.Parse(Console.ReadLine());
                 if (value > 0 && value <= (10 - valueFirstTry))
+                {
                     ok = true;
+                }
                 else
+                {
                     Console.WriteLine("Entrée non valide, recommencez.");
+                }
             }
             return value;
         }
-
     }
 }
