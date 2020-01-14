@@ -1,0 +1,17 @@
+language: csharp
+solution: TuplesTLAS/TuplesTLAS.sln
+env:
+  global:
+    - EnableNuGetPackageRestore=true
+  script:
+    - xbuild /p:Configuration=Debug TuplesTLAS/TuplesTLAS.sln
+    - sudo apt-get install nunit-console
+    - nunit-console TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.dll
+  install:
+    - nuget restore TuplesTLAS/TuplesTLAS.sln
+  os:
+    - windows
+    - osx
+  mono:
+    - 3.12.0
+    - 3.10.0
