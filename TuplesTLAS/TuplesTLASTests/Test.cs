@@ -10,13 +10,20 @@ namespace TuplesTLASTests
     public class UnitTest1
     {
         [Test()]
-        public void TestSize()
+        public void TestSize1()
         {
             var tuple = new TupleAPI();
             tuple.Add(1, 2);
             tuple.Add(3, 4);
             tuple.Add(3, 4);
             Assert.AreEqual(tuple.Tuples.Count, 3);
+        }
+
+        [Test()]
+        public void TestSizeEmpty()
+        {
+            var tuple = new TupleAPI();
+            Assert.AreEqual(tuple.Tuples.Count, 0);
         }
 
         [Test()]
@@ -113,13 +120,27 @@ namespace TuplesTLASTests
         }
 
         [Test()]
-        public void TestMaxCapacityTuple()
+        public void TestMaxCapacityTuple1()
         {
             var tuple = new TupleAPI();
             var ex = Assert.Throws<ArgumentException>(() => tuple.Add(5, 6));
             Assert.AreEqual("Max capacity of the tuple", ex.Message);
         }
 
+        [Test()]
+        public void TestMaxCapacityTuple2()
+        {
+            var tuple = new TupleAPI();
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(30, 0));
+            Assert.AreEqual("Max capacity of the tuple", ex.Message);
+        }
 
+        [Test()]
+        public void TestMaxCapacityTuple3()
+        {
+            var tuple = new TupleAPI();
+            var ex = Assert.Throws<ArgumentException>(() => tuple.Add(0, 30));
+            Assert.AreEqual("Max capacity of the tuple", ex.Message);
+        }
     }
 }
