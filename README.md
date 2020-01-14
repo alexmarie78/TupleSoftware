@@ -23,6 +23,9 @@ This software can launch automatic test at every push
 # Workers
 
 CAPODANO Thomas
+
 HAMEL Ludovic
+
 MARIE Alexandre
+
 POLIN-MARCILLY Sebastien
