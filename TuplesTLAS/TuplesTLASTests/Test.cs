@@ -142,5 +142,17 @@ namespace TuplesTLASTests
             var ex = Assert.Throws<ArgumentException>(() => tuple.Add(0, 30));
             Assert.AreEqual("Max capacity of the tuple", ex.Message);
         }
+        
+        [Test()]
+        public void TestMainSpareLast()
+        {
+
+        }
+
+        [Test()]
+        public void TestMainStrikeLast()
+        {
+
+        }
     }
 }
