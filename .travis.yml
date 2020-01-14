@@ -4,16 +4,9 @@ os:
   - linux
 install:
   - nuget restore TuplesTLAS/TuplesTLAS.sln
-  - nuget install NUnit.Console -Version 3.10.0 -OutputDirectory testrunner
+#  - nuget install NUnit.Console -Version 3.10.0 -OutputDirectory testrunner
+  - nuget install NUnit -Version 3.12.0 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Release TuplesTLAS/TuplesTLAS.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.dll
-
-
-#env:  
-#  before_install:
-#  - sudo apt-get install nunit-console
-#  before_script:
-#  - nuget restore TuplesTLAS/TuplesTLAS.sln
-#  after-script:
-#    - nunit-console TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.dll
+#  - mono ./testrunner/NUnit.ConsoleRunner.3.10.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.dll
+  - mono ./testrunner/NUnit.Framework-3.12.0/bin/net45/nunitlite-runner.exe ./TuplesTLAS/TuplesTLASTests/bin/Release/TuplesTLASTests.dll
