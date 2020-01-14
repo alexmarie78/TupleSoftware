@@ -56,14 +56,15 @@ namespace TuplesTLAS.Objects
             {
                 var temp = Tuples[i].Item1 + Tuples[i].Item2;
                 sum += temp;
-                if(temp == 10)
-                {
-                    sum += Tuples[i + 1].Item1;
-                }
-                else if(Tuples[i].Item1 == 10)
+
+                if (Tuples[i].Item1 == 10)
                 {
                     sum += Tuples[i + 1].Item1 + Tuples[i + 1].Item2;
                 }
+                else if (temp == 10)
+                {
+                    sum += Tuples[i + 1].Item1;
+                } 
             }
 
             // Handle last element
