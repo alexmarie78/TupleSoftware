@@ -7,5 +7,5 @@ install:
   - nuget install NUnit.Console -Version 3.9.0 -OutputDirectory testrunner
 script:
   - msbuild /p:Configuration=Debug TuplesTLAS/TuplesTLAS.sln
-  - echo ls -l ./TuplesTLAS/TuplesTLASTests/bin/Debug/
+  - ls -l ./TuplesTLAS/TuplesTLASTests/bin/Debug/
   - mono ./testrunner/NUnit.ConsoleRunner.3.9.0/tools/nunit3-console.exe ./TuplesTLAS/TuplesTLASTests/bin/Debug/TuplesTLASTests.dll
