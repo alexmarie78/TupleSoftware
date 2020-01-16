@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
+  <ProjectName>TuplesTLASTests</ProjectName>
+  <ProjectLanguage>C#</ProjectLanguage>
+  <ProjectType>Test</ProjectType>
+  <ProjectGuid>c7dcb7db-50b1-4d14-97d1-0dcad2a83812</ProjectGuid>
+  <FullPath>D:\Documents\GITrepos\TupleSoftware\TuplesTLAS\TuplesTLASTests\TuplesTLASTests.csproj</FullPath>
+  <IsExcluded>false</IsExcluded>
+  <AnalysisResults>
+    <AnalysisResult Id="FilesToAnalyze" Location="D:\Documents\GITrepos\TupleSoftware\TuplesTLAS\.sonarqube\out\1\FilesToAnalyze.txt" />
+  </AnalysisResults>
+  <AnalysisSettings>
+    <Property Name="sonar.cs.roslyn.reportFilePath">D:\Documents\GITrepos\TupleSoftware\TuplesTLAS\TuplesTLASTests\bin\Debug\TuplesTLASTests.dll.RoslynCA.json|D:\Documents\GITrepos\TupleSoftware\TuplesTLAS\TuplesTLASTests\bin\Debug\TuplesTLASTests.dll.RoslynCA.json</Property>
+    <Property Name="sonar.cs.analyzer.projectOutPath">D:\Documents\GITrepos\TupleSoftware\TuplesTLAS\.sonarqube\out\1</Property>
+  </AnalysisSettings>
+  <Configuration>Debug</Configuration>
+  <Platform>AnyCPU</Platform>
+</ProjectInfo>

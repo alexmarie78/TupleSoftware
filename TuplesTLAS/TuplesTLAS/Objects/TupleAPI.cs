@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -42,7 +42,6 @@ namespace TuplesTLAS.Objects
 
             Tuples.Add(new Tuple<int, int>(x, y));
         }
-
 
         /// <summary>
         /// Return the sum of all element of the list of Tuples
