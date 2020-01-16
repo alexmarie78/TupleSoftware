@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using TuplesTLAS.Objects;
+using TuplesTLAS.GameManager;
 
 namespace TuplesTLASTests
 {
@@ -144,15 +145,64 @@ namespace TuplesTLASTests
         }
         
         [Test()]
+        public void TestMainNoBonus()
+        {
+            var game = new Game();
+            var tuple = new TupleAPI();
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(5, 1);
+
+            var score = game.LaunchGame(tuple);
+            Assert.AreEqual(182, score);
+        }
+
+        [Test()]
         public void TestMainSpareLast()
         {
+            var game = new Game();
+            var tuple = new TupleAPI();
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(10, 0);
+            tuple.Add(2, 8);
 
+            var score = game.LaunchGame(tupleApi:tuple, valueBonus1:6);
+            Assert.AreEqual(196, score);
         }
 
         [Test()]
         public void TestMainStrikeLast()
         {
+            var game = new Game();
+            var tuple = new TupleAPI();
+            tuple.Add(10, 0);   // 10
+            tuple.Add(10, 0);   // 30
+            tuple.Add(10, 0);   // 50
+            tuple.Add(10, 0);   // 70
+            tuple.Add(10, 0);   // 90
+            tuple.Add(10, 0);   // 110
+            tuple.Add(10, 0);   // 130
+            tuple.Add(10, 0);   // 150
+            tuple.Add(10, 0);   // 170
+            tuple.Add(10, 0);   // 190
+                                // 197
 
+            var score = game.LaunchGame(tupleApi:tuple, 6, 1);
+            Assert.AreEqual(197, score);
         }
     }
 }
