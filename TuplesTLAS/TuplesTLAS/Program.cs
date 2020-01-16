@@ -27,12 +27,6 @@ namespace TuplesTLAS
             tuple.Add(10, 0);
             tuple.Add(5, 1);
             
-            /*
-            tuple.Add(2, 8);
-            tuple.Add(6, 0);
-            */
-            
-
             game.LaunchGame(tuple, valueBonus1:6, valueBonus2:2);
 
             Console.WriteLine("Press any key to exit...");
