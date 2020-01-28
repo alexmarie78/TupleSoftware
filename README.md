@@ -1,3 +1,6 @@
+#commentaire de Yann Prudent
+Tres bien d'avoir ajouté des metriques de code, dommage de ne pas avoir corrigé les warning engendrés. Le repo n'est pas très maitrisé, il y a dedans des fichiers inutiles au projet.
+15/20
 # TupleSoftware
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fca77146211f477897abf7c63095e79e)](https://www.codacy.com/manual/alexmarie78/TupleSoftware?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alexmarie78/TupleSoftware&amp;utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/alexmarie78/tuplesoftware/badge)](https://www.codefactor.io/repository/github/alexmarie78/tuplesoftware)
